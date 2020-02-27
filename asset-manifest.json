@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/kenneth-taylor-project-five/static/css/main.dca88bc0.chunk.css",
+    "main.js": "/kenneth-taylor-project-five/static/js/main.ad8916d3.chunk.js",
+    "main.js.map": "/kenneth-taylor-project-five/static/js/main.ad8916d3.chunk.js.map",
+    "runtime-main.js": "/kenneth-taylor-project-five/static/js/runtime-main.cc43d20a.js",
+    "runtime-main.js.map": "/kenneth-taylor-project-five/static/js/runtime-main.cc43d20a.js.map",
+    "static/js/2.07b7e3e1.chunk.js": "/kenneth-taylor-project-five/static/js/2.07b7e3e1.chunk.js",
+    "static/js/2.07b7e3e1.chunk.js.map": "/kenneth-taylor-project-five/static/js/2.07b7e3e1.chunk.js.map",
+    "index.html": "/kenneth-taylor-project-five/index.html",
+    "precache-manifest.09547872257574fd762205579a94d7a8.js": "/kenneth-taylor-project-five/precache-manifest.09547872257574fd762205579a94d7a8.js",
+    "service-worker.js": "/kenneth-taylor-project-five/service-worker.js",
+    "static/css/main.dca88bc0.chunk.css.map": "/kenneth-taylor-project-five/static/css/main.dca88bc0.chunk.css.map",
+    "static/js/2.07b7e3e1.chunk.js.LICENSE.txt": "/kenneth-taylor-project-five/static/js/2.07b7e3e1.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/kenneth-taylor-project-five/static/media/bookshelf.b3ef2889.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc43d20a.js",
+    "static/js/2.07b7e3e1.chunk.js",
+    "static/css/main.dca88bc0.chunk.css",
+    "static/js/main.ad8916d3.chunk.js"
+  ]
+}
