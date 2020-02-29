@@ -58,6 +58,7 @@ class App extends Component {
         q: this.state.userInput,
         startIndex: 0,
         maxResults: 16,
+        
       }
     }).then((response) => {
       console.log(response.data.items);

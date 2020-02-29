@@ -16,7 +16,6 @@ body,
 h1,
 h2,
 h3,
-h4,
 p,
 ul,
 div,
@@ -67,6 +66,29 @@ h1 {
 .results{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 70px auto;
+  border: 1px solid black;
+}
+
+.results ul {
+  display: grid;
+}
+
+.results li {
+  border: 1px solid rgb(211, 202, 202);
+  height: 300px;
+}
+
+.results img,
+.results h2,
+.results p {
+  width: 130px;
+  height: auto;
+  margin: 10px auto;
+}
+
+.book img {
+  box-shadow: 2px 2px 2px black;
 }
 
 
