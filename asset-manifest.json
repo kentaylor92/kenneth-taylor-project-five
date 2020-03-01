@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/kenneth-taylor-project-five/static/css/main.cd50336d.chunk.css",
-    "main.js": "/kenneth-taylor-project-five/static/js/main.fca54a5c.chunk.js",
-    "main.js.map": "/kenneth-taylor-project-five/static/js/main.fca54a5c.chunk.js.map",
+    "main.css": "/kenneth-taylor-project-five/static/css/main.29d76503.chunk.css",
+    "main.js": "/kenneth-taylor-project-five/static/js/main.5f15be5c.chunk.js",
+    "main.js.map": "/kenneth-taylor-project-five/static/js/main.5f15be5c.chunk.js.map",
     "runtime-main.js": "/kenneth-taylor-project-five/static/js/runtime-main.cc43d20a.js",
     "runtime-main.js.map": "/kenneth-taylor-project-five/static/js/runtime-main.cc43d20a.js.map",
-    "static/js/2.d41bd916.chunk.js": "/kenneth-taylor-project-five/static/js/2.d41bd916.chunk.js",
-    "static/js/2.d41bd916.chunk.js.map": "/kenneth-taylor-project-five/static/js/2.d41bd916.chunk.js.map",
+    "static/js/2.c93cdc51.chunk.js": "/kenneth-taylor-project-five/static/js/2.c93cdc51.chunk.js",
+    "static/js/2.c93cdc51.chunk.js.map": "/kenneth-taylor-project-five/static/js/2.c93cdc51.chunk.js.map",
     "index.html": "/kenneth-taylor-project-five/index.html",
-    "precache-manifest.cacd426105de309c175997221ecc238c.js": "/kenneth-taylor-project-five/precache-manifest.cacd426105de309c175997221ecc238c.js",
+    "precache-manifest.7028f750a3a5c64ddf52c206cf5dd1af.js": "/kenneth-taylor-project-five/precache-manifest.7028f750a3a5c64ddf52c206cf5dd1af.js",
     "service-worker.js": "/kenneth-taylor-project-five/service-worker.js",
-    "static/css/main.cd50336d.chunk.css.map": "/kenneth-taylor-project-five/static/css/main.cd50336d.chunk.css.map",
-    "static/js/2.d41bd916.chunk.js.LICENSE.txt": "/kenneth-taylor-project-five/static/js/2.d41bd916.chunk.js.LICENSE.txt",
+    "static/css/main.29d76503.chunk.css.map": "/kenneth-taylor-project-five/static/css/main.29d76503.chunk.css.map",
+    "static/js/2.c93cdc51.chunk.js.LICENSE.txt": "/kenneth-taylor-project-five/static/js/2.c93cdc51.chunk.js.LICENSE.txt",
     "static/media/index.css": "/kenneth-taylor-project-five/static/media/bookshelf.b3ef2889.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.cc43d20a.js",
-    "static/js/2.d41bd916.chunk.js",
-    "static/css/main.cd50336d.chunk.css",
-    "static/js/main.fca54a5c.chunk.js"
+    "static/js/2.c93cdc51.chunk.js",
+    "static/css/main.29d76503.chunk.css",
+    "static/js/main.5f15be5c.chunk.js"
   ]
 }
