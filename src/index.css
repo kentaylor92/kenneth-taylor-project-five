@@ -53,16 +53,12 @@ h1 {
 }
 
 
-/* .App {
-  text-align: center;
-} */
-
-
-
 .wrapper {
   margin: 0 auto;
   width: 80%;
 }
+
+/* Header */
 
 .App-header {
   height: 90vh;
@@ -81,16 +77,19 @@ h1 {
   border: 5px solid black;
 }
 
-.results{
+/* Results */
+
+.results,
+.bookshelf{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 70px auto;
-  border: 1px solid rgb(167, 219, 236);
+  /* border: 1px solid rgb(167, 219, 236); */
 }
 
-.results ul {
+/* .results ul {
   display: grid;
-}
+} */
 
 .results li {
   border: 1px solid rgb(167, 219, 236);
@@ -98,7 +97,9 @@ h1 {
 }
 
 .results img,
-.results p {
+.results p,
+.bookshelf img,
+.bookshelf p {
   width: 130px;
   height: auto;
   margin: 10px auto;
@@ -125,6 +126,7 @@ h1 {
   margin-bottom: 25px;
 }
 
+/* Form */
 
 form {
   display: flex;
@@ -145,6 +147,11 @@ form input {
   width: 80%;
   height: 40px;
   margin: 20px 0;
+  
+}
+
+.fixedHeader {
+  position: fixed;
 }
 
 form button {
@@ -157,6 +164,33 @@ form button:focus {
   cursor: pointer;
   background-color: rgb(167, 219, 236);
 }
+
+/* Bookshelf */
+
+/* .bookshelf {
+  text-align: center;
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 50px;
+} */
+
+.bookshelf div {
+  display: grid;
+  margin: 0 auto;
+
+}
+
+.bookshelfHeading {
+  text-align: center;
+  font-size: 6rem;
+}
+
+
+
+
+
+/* Footer */
 
 .footer p {
   font-size: 1.2rem;
