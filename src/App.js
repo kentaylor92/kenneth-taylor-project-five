@@ -41,8 +41,6 @@ class App extends Component {
 
       const newState = []
       response.data.items.map(function (book) {
-        // const uniqueId = book.id;
-        // console.log(book.id);
         newState.push({
           title: book.volumeInfo.title,
           key: book.id,
@@ -58,7 +56,7 @@ class App extends Component {
         
       
     }).catch((error) => {
-      // console.log(error);
+      console.log(error);
     })
 
     // Bookshelf firebase log
@@ -87,23 +85,14 @@ class App extends Component {
         updatedBookshelf.push(bookData);
       }
 
-
-
       this.setState({
         updatedBookshelf: updatedBookshelf,
-        
       });
-
     });
   }
 
   // Add to BookShelf
   addToBookshelf (book) {
-    // e.preventDefault();
-    // console.log('YOU MADE IT!!');
-    // console.log(book)
-    // console.log(book.key)
-    
     const dbRef = firebase.database().ref();
     // this.setState({ bookSelect: e.target.value })
     dbRef.push(book);
@@ -113,7 +102,6 @@ class App extends Component {
 
     const dbRef = firebase.database().ref();
     dbRef.child(book).remove();
-    // console.log(book);
   }
 
 
@@ -128,7 +116,6 @@ class App extends Component {
   // Form Submit Function
   handleFormSubmit = (e) => {
     e.preventDefault();
-    // console.log('The following text was submitted!', + this.state.value);
 
     const apiKey = 'AIzaSyBN0p9j4hgZ700Jnyt2zz9QwMx9BIdcjW4';
 
@@ -144,12 +131,12 @@ class App extends Component {
         
       }
     }).then((response) => {
-      // console.log(response.data.items);
+     
 
        const newState = []
        response.data.items.map(function(book) {
-        // const uniqueId = book.id;
-        // console.log(book.id);
+       
+
         newState.push({
           title: book.volumeInfo.title,
           key: book.id,
@@ -176,18 +163,15 @@ class App extends Component {
   // Scroll Function
   scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
 
-
-
-  
-
-
-  
+  // Render
   render() {
     return (
       <div className="App">
-        {/* <Header /> */}
         <header className="App-header">
-            <h1>Book Search App</h1>
+          <div className="headerText">
+            <h1 id='search'>Book Search App</h1>
+            <a href="#bookshelf"><i class="fas fa-book-reader"></i> Go to Bookshelf</a>
+          </div>
           <div className="wrapper">
 
             <form action="submit" onSubmit={this.handleFormSubmit}>
@@ -199,8 +183,7 @@ class App extends Component {
                 value={this.state.userInput}
                 placeholder='Search by book name, author, or subject.'
               />
-              <button type='submit' ref={this.myRef}>Search for books</button>
-              
+              <button type='submit' ref={this.myRef}>Search for books</button>         
             </form>
           </div>
         </header>
@@ -215,24 +198,26 @@ class App extends Component {
           })}
         </section>
 
-        <section>
-            <h2 className="bookshelfHeading">Bookshelf</h2>
+        <section className="bookshelfSection">
+          <div className="bookshelfText">
+            <h2 className="bookshelfHeading" id="bookshelf">Bookshelf</h2>
+            <a href="#search" class='backToSearchLink'><i class="fas fa-search"></i>Back to Search</a>
+          </div>
           <div className="bookshelf wrapper">
             {this.state.updatedBookshelf.map((book) => {
               console.log(book)
               return (
-              <div key={book.key}>
-                  <a href={book.name.linkToBuy} target='_blank' rel="noopener noreferrer">
-                    <img src={
-                      book.name.bookImg === undefined
-                        ? 'http://i.imgur.com/sJ3CT4V.gif'
-                        : book.name.bookImg} alt={book.name.title} />
-                  </a> 
-                  <h3>{book.name.title}</h3>
-                  <p>{book.name.author}</p>
-                  <button onClick={ () => {this.removeBook(book.key) }}>Remove from shelf</button>  
-              </div>
-              
+                <div key={book.key}>
+                    <a href={book.name.linkToBuy} target='_blank' rel="noopener noreferrer">
+                      <img src={
+                        book.name.bookImg === undefined
+                          ? 'http://i.imgur.com/sJ3CT4V.gif'
+                          : book.name.bookImg} alt={book.name.title} />
+                    </a> 
+                    <h3>{book.name.title}</h3>
+                    <p>{book.name.author[0]}</p>
+                    <button onClick={ () => {this.removeBook(book.key) }}>Remove from shelf</button>  
+                </div>   
               )
             })}
           </div>
