@@ -36,9 +36,7 @@ class App extends Component {
         maxResults: 16,
       }
     }).then((response) => {
-      // this.setState({
-      //   books: response.data.items,
-
+      
       const newState = []
       response.data.items.map(function (book) {
         newState.push({
@@ -53,8 +51,7 @@ class App extends Component {
       this.setState({
         books: newState
       })
-        
-      
+            
     }).catch((error) => {
       console.log(error);
     })
@@ -66,16 +63,6 @@ class App extends Component {
 
       const updatedBookshelf = [];
       const data = response.val();
-      // console.log(data)
-      
-      // for (let key in data) {
-      //   updatedBookshelf.push({
-      //     ...data[key]
-      //   })
-      //   // console.log(updatedBookshelf);
-
-      //   // updatedBookshelf.push(data[key]);
-      // }
 
       for (let key in data) {
         const bookData = {
@@ -104,8 +91,6 @@ class App extends Component {
     dbRef.child(book).remove();
   }
 
-
-
   // Handle Change Function for Text Input
   handleChange = (e) => {
     this.setState({
@@ -132,7 +117,6 @@ class App extends Component {
       }
     }).then((response) => {
      
-
        const newState = []
        response.data.items.map(function(book) {
        
@@ -155,9 +139,8 @@ class App extends Component {
     this.setState({
       userInput: '',
     })
-
-    this.scrollToMyRef(this.myRef);
     
+    this.scrollToMyRef(this.myRef);   
   }
 
   // Scroll Function
@@ -224,8 +207,6 @@ class App extends Component {
             })}
           </div>
         </section>
-
-        {/* Footer section */}
         <Footer />
       </div>
     );

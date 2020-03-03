@@ -150,6 +150,7 @@ form {
 form label {
   border-radius: 3px;
   text-transform: uppercase;
+  text-align: center;
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
   padding: 20px 30px;
   font-family: 'Spartan';
@@ -214,7 +215,6 @@ form input {
 
 /* Bookshelf */
 
-
 i {
   margin-right: 10px;
 }
@@ -237,7 +237,6 @@ i {
   font-size: 1.5rem;
 }
 
-
 .bookshelf div {
   margin-top: 20px;
 }
@@ -251,15 +250,14 @@ i {
 
 .footer p {
   font-size: 1.2rem;
-  color: black;
+  color: white;
   text-align: center;
-  background: rgb(167, 219, 236);
+  background: rgb(2, 2, 2);
   padding: 10px 0;
 }
 
 /* MEDIA QUERIES */
 /* MEDIA QUERIES */
-
 
 @media (max-width: 1060px) {
   
@@ -268,16 +266,14 @@ i {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .bookshelfText {
+    text-align: center;
+  }
 
-.bookshelfText {
-  text-align: center;
-}
-
-.backToSearchLink {
-  display: inline-block;
-  margin-top: 20px;
-}
-
+  .backToSearchLink {
+    display: inline-block;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 705px) {
@@ -310,7 +306,6 @@ i {
   .bookshelf {
     grid-template-columns: 1fr;
   }
-
 }
 
 
