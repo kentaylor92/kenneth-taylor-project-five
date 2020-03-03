@@ -6,7 +6,7 @@ import React from 'react';
 function displayBooks ({book, shelf}) {  
     
     
-
+            console.log(book.bookImg);
         return (
             <div className='book'>    
                  <a href={book.linkToBuy} target='_blank' rel="noopener noreferrer"> 

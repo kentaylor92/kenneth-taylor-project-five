@@ -23,9 +23,7 @@ class App extends Component {
 
   // Component Did Mount
   componentDidMount() {   
-    // Initial API Call for PageLoad
     const apiKey = 'AIzaSyBN0p9j4hgZ700Jnyt2zz9QwMx9BIdcjW4';
-
     // Results to be displayed on page load!
     axios({
       url: 'https://www.googleapis.com/books/v1/volumes',
@@ -70,17 +68,30 @@ class App extends Component {
 
       const updatedBookshelf = [];
       const data = response.val();
+      // console.log(data)
       
-      for (let key in data) {
-        updatedBookshelf.push({
-          ...data[key]
-        })
+      // for (let key in data) {
+      //   updatedBookshelf.push({
+      //     ...data[key]
+      //   })
+      //   // console.log(updatedBookshelf);
 
-        // updatedBookshelf.push(data[key]);
+      //   // updatedBookshelf.push(data[key]);
+      // }
+
+      for (let key in data) {
+        const bookData = {
+          key: key,
+          name: data[key],
+        }
+        updatedBookshelf.push(bookData);
       }
+
+
 
       this.setState({
         updatedBookshelf: updatedBookshelf,
+        
       });
 
     });
@@ -89,13 +100,20 @@ class App extends Component {
   // Add to BookShelf
   addToBookshelf (book) {
     // e.preventDefault();
-    console.log('YOU MADE IT!!');
-    console.log(book)
-    console.log(book.key)
+    // console.log('YOU MADE IT!!');
+    // console.log(book)
+    // console.log(book.key)
     
     const dbRef = firebase.database().ref();
     // this.setState({ bookSelect: e.target.value })
     dbRef.push(book);
+  }
+
+  removeBook = (book) => {
+
+    const dbRef = firebase.database().ref();
+    dbRef.child(book).remove();
+    // console.log(book);
   }
 
 
@@ -145,12 +163,6 @@ class App extends Component {
         books: newState,
       })
 
-      // this.setState({
-      //   books: response.data.items,
-      //   bookId: response.data.items.id,
-      // })
-      
-
     })
 
     this.setState({
@@ -164,7 +176,7 @@ class App extends Component {
   // Scroll Function
   scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
 
-  // Search Scroll Function
+
 
   
 
@@ -196,6 +208,7 @@ class App extends Component {
         {/* Results Section */}
         <section className="results wrapper" ref={this.myRef}>
           {this.state.books.map((book) => {
+            console.log(book)
             return (
               <DisplayBooks shelf={this.addToBookshelf} key={book.id} book={book}  />
             )
@@ -206,21 +219,18 @@ class App extends Component {
             <h2 className="bookshelfHeading">Bookshelf</h2>
           <div className="bookshelf wrapper">
             {this.state.updatedBookshelf.map((book) => {
+              console.log(book)
               return (
               <div key={book.key}>
-                  <a href={book.linkToBuy} target='_blank' rel="noopener noreferrer">
+                  <a href={book.name.linkToBuy} target='_blank' rel="noopener noreferrer">
                     <img src={
-                      book.bookImg === undefined
+                      book.name.bookImg === undefined
                         ? 'http://i.imgur.com/sJ3CT4V.gif'
-                        : book.bookImg} alt={book.title} />
+                        : book.name.bookImg} alt={book.name.title} />
                   </a> 
-                  <h3>{book.title}</h3>
-                  {/* <p>{
-                    book.authors === undefined
-                      ? ''
-                      : book.authors[0]}
-                  </p> */}
-              
+                  <h3>{book.name.title}</h3>
+                  <p>{book.name.author}</p>
+                  <button onClick={ () => {this.removeBook(book.key) }}>Remove from shelf</button>  
               </div>
               
               )

@@ -1,4 +1,4 @@
-// stripping styles
+/* stripping styles
 body,
 h1,
 h2,
@@ -22,11 +22,11 @@ img {
 ul,
 li {
     list-style: none;
-}
+} */
 
 /* Global styles */
 
-html {
+/* html {
     font-size: 62.5%;
 }
 
@@ -36,7 +36,7 @@ h1 {
   font-family: 'Spartan';
   text-transform: uppercase;
 
-}
+} */
 
 
 /* .App {
@@ -45,7 +45,7 @@ h1 {
 
 
 
-.wrapper {
+/* .wrapper {
   margin: 0 auto;
   width: 80%;
 }
@@ -62,7 +62,7 @@ h1 {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -80,8 +80,8 @@ form {
   justify-content: center;
   align-items: center;
   margin-top: 30vh;
-}
-
+} */
+/* 
 form label {
   border: 2px solid black;
   padding: 10px 20px;
@@ -104,8 +104,8 @@ form button:hover,
 form button:focus {
   cursor: pointer;
   background-color: grey;
-}
+} */
 
 
 
-
+ 
