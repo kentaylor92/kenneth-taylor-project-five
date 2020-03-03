@@ -141,7 +141,7 @@ class App extends Component {
           title: book.volumeInfo.title,
           key: book.id,
           bookImg: book.volumeInfo.imageLinks === undefined ? 'http://i.imgur.com/sJ3CT4V.gif' : book.volumeInfo.imageLinks.thumbnail,
-          author: book.volumeInfo.authors,
+          author: book.volumeInfo.authors === undefined ? '' : book.volumeInfo.authors,
           linkToBuy: book.volumeInfo.infoLink,
         })
       })
@@ -169,13 +169,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <div className="headerText">
-            <h1 id='search'>Book Search App</h1>
+            <h1 id='search'>bookshelf</h1>
             <a href="#bookshelf"><i class="fas fa-book-reader"></i> Go to Bookshelf</a>
           </div>
           <div className="wrapper">
 
             <form action="submit" onSubmit={this.handleFormSubmit}>
-              <label htmlFor='bookSearch'>Search by book name, author, or subject.</label>
+              <label htmlFor='bookSearch'>Search by book name, author, or subject</label>
               <input
                 type='text'
                 id='bookSearch'
@@ -199,8 +199,8 @@ class App extends Component {
         </section>
 
         <section className="bookshelfSection">
-          <div className="bookshelfText">
-            <h2 className="bookshelfHeading" id="bookshelf">Bookshelf</h2>
+          <div className="bookshelfText wrapper">
+            <h2 className="bookshelfHeading" id="bookshelf">my Bookshelf</h2>
             <a href="#search" class='backToSearchLink'><i class="fas fa-search"></i>Back to Search</a>
           </div>
           <div className="bookshelf wrapper">
@@ -208,12 +208,14 @@ class App extends Component {
               console.log(book)
               return (
                 <div key={book.key}>
+                  <div className="bookImageContainer">
                     <a href={book.name.linkToBuy} target='_blank' rel="noopener noreferrer">
                       <img src={
                         book.name.bookImg === undefined
                           ? 'http://i.imgur.com/sJ3CT4V.gif'
                           : book.name.bookImg} alt={book.name.title} />
                     </a> 
+                  </div>
                     <h3>{book.name.title}</h3>
                     <p>{book.name.author[0]}</p>
                     <button onClick={ () => {this.removeBook(book.key) }}>Remove from shelf</button>  

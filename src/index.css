@@ -41,7 +41,6 @@ img {
 ul,
 li {
     list-style: none;
-    /* text-align: center; */
 }
 
 /* Global styles */
@@ -55,6 +54,11 @@ html {
 h1 {
   color: black;
   margin: 4% 0 0 10%;
+  font-size: calc(30px + (60 - 30) * ((100vw - 320px) / (1400 - 320)));
+}
+
+h1, 
+.bookshelfHeading {
   font-family: 'Spartan';
   text-transform: uppercase;
 }
@@ -62,6 +66,23 @@ h1 {
 .wrapper {
   margin: 0 auto;
   width: 80%;
+}
+
+button,
+a {
+  padding: 10px 30px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: white;
+  font-size: calc(10px + (10 - 5) * ((100vw - 320px) / (1400 - 320)));
+  transition: 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+
+.book a,
+.bookshelf a {
+  background-color: transparent;
 }
 
 button:hover,
@@ -75,8 +96,6 @@ button:focus {
   height: 90vh;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  font-size: calc(10px + 2vmin);
   color: white;
   position: relative;
 }
@@ -90,16 +109,22 @@ button:focus {
   position: absolute;
   right: 10%;
   top: 2%;
-  background: white;
-  padding: 5px 10px;
-  border: 1px solid black;
-  font-size: 1.8rem;
-  /* text-transform: uppercase; */
+}
+
+.headerText a,
+.backToSearchLink {
+  padding: 10px 30px;
+  border: none;
+  font-size: calc(10px + (10 - 5) * ((100vw - 320px) / (1400 - 320)));
   transition: 0.2s ease-in-out;
 }
 
 .headerText a:hover,
-.headerText a:focus {
+.headerText a:focus,
+.backToSearchLink:hover,
+.backToSearchLink:focus,
+button:hover,
+button:focus {
   background: black;
   color: white;
 }
@@ -123,8 +148,11 @@ form {
 }
 
 form label {
-  border: 2px solid black;
-  padding: 10px 20px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+  padding: 20px 30px;
+  font-family: 'Spartan';
   background-color: rgba(248, 249, 250, 0.8);
   color: black;
 }
@@ -137,19 +165,6 @@ form input {
   border-radius: 5px;
   border: none;
 }
-
-form button {
-  padding: 10px 20px;
-  border: 2px solid black;
-}
-
-form button:hover,
-form button:focus,
-form input:focus {
-  /* border: 2px solid black; */
-  box-shadow: 5px 2px 2px black;
-}
-
 
 /* Results */
 
@@ -176,7 +191,7 @@ form input:focus {
 
 .book img,
 .bookshelf img {
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 2px 2px 5px rgb(73, 73, 73);
   max-height: 200px;
 }
 
@@ -188,60 +203,26 @@ form input:focus {
   margin-top: 0;
 }
 
-.book button,
-.bookshelf button {
-  padding: 5px 10px;
+.bookImageContainer {
+  height: 250px;
 }
-
-.book button:hover,
-.book button:focus, 
-.bookshelf button:hover,
-.bookshelf button:focus {
-  /* border: 2px solid black; */
-  box-shadow: 2px 2px 0px black;
-  background-color: #fafafa;
-}
-
-.book img:focus,
-.book img:hover,
-.bookshelf img:focus,
-.bookshelf img:hover {
-  box-shadow: 5px 5px 5px black;
-}
-
 
 .addToBookshelf {
   text-align: center;
   margin-bottom: 25px;
 }
 
-
-
 /* Bookshelf */
 
-.backToSearchLink {
-  margin-left: 10%;
-  font-size: 1.8rem;
-  border: 2px solid rgb(202, 196, 196);
-  padding: 5px 10px;
-  background-color: rgb(233, 225, 225);
-}
 
-.backToSearchLink:hover,
-.backToSearchLink:focus {
-  background-color: white;
-  /* border: 2px solid black; */
-  box-shadow: 2px 2px 0px black;
-}
-
-.backToSearchLink i {
+i {
   margin-right: 10px;
 }
 
 .bookshelf {
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 50px auto;
   background-color: rgb(233, 225, 225);
   padding: 20px 0 50px 0;
@@ -256,10 +237,6 @@ form input:focus {
   font-size: 1.5rem;
 }
 
-.bookshelf button {
-  /* padding: 5px 10px; */
-  margin-top: 10px;
-}
 
 .bookshelf div {
   margin-top: 20px;
@@ -267,15 +244,8 @@ form input:focus {
 
 .bookshelfHeading {
   text-align: center;
-  font-size: 6rem;
+  font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1400 - 320)));
 }
-
-
-/* .bookshelf button:hover,
-.bookshelf button:focus {
-  background-color: lightblue;
-  color: black;
-} */
 
 /* Footer */
 
@@ -287,6 +257,61 @@ form input:focus {
   padding: 10px 0;
 }
 
+/* MEDIA QUERIES */
+/* MEDIA QUERIES */
+
+
+@media (max-width: 1060px) {
+  
+  .results,
+  .bookshelf {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+
+.bookshelfText {
+  text-align: center;
+}
+
+.backToSearchLink {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+}
+
+@media (max-width: 705px) {
+  
+  .results,
+  .bookshelf {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .headerText {
+    flex-direction: column;
+  }
+
+  .headerText {
+    position: relative;
+  }
+
+  .headerText a {
+   
+    text-align: center;
+    top: 110%;
+    position: absolute;
+  }  
+
+}
+
+@media (max-width: 445px) {
+  
+  .results,
+  .bookshelf {
+    grid-template-columns: 1fr;
+  }
+
+}
 
 
 
