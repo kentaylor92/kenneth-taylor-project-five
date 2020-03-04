@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kenneth-taylor-project-five/precache-manifest.b9767db855be79bdbe10959ff36ce6a3.js"
+  "/kenneth-taylor-project-five/precache-manifest.dc009347a873e8fb76773b1c395a63e0.js"
 );
 
 self.addEventListener('message', (event) => {
