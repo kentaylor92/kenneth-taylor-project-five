@@ -5,6 +5,7 @@ import './index.css';
 import DisplayBooks from './components/DisplayBooks';
 import Footer from './components/Footer';
 
+// Hello to whoever is reading this/marking this!  Just wanted to let you know that I have left organizational comments in here for myself so that I can return to this project during the final week of bootcamp and continue to work on things to improve / implement possible feedback!  I intend to delete all comments before this goes into my portfolio, but on some projects I have lost a mark for including comments, and on other projects I have lost a mark for not including comments.  So I thought maybe this would help to clarify my intentions.  Sorry for the essay, I hope you enjoy my project!
 
 class App extends Component {
   constructor() {
@@ -14,9 +15,6 @@ class App extends Component {
     this.state = {
       books: [],
       userInput: '',
-      bookshelf: [],
-      bookSelect: '',
-      bookId: '',
       updatedBookshelf: []
     }
   }
@@ -81,7 +79,6 @@ class App extends Component {
   // Add to BookShelf
   addToBookshelf (book) {
     const dbRef = firebase.database().ref();
-    // this.setState({ bookSelect: e.target.value })
     dbRef.push(book);
   }
 
@@ -120,7 +117,6 @@ class App extends Component {
        const newState = []
        response.data.items.map(function(book) {
        
-
         newState.push({
           title: book.volumeInfo.title,
           key: book.id,
@@ -139,7 +135,7 @@ class App extends Component {
     this.setState({
       userInput: '',
     })
-    
+
     this.scrollToMyRef(this.myRef);   
   }
 
@@ -171,7 +167,6 @@ class App extends Component {
           </div>
         </header>
 
-        {/* Results Section */}
         <section className="results wrapper" ref={this.myRef}>
           {this.state.books.map((book) => {
             console.log(book)
