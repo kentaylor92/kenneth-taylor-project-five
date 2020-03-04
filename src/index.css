@@ -38,6 +38,11 @@ img {
   display: block;
 }
 
+img:hover,
+img:focus {
+  opacity: 0.9;
+}
+
 ul,
 li {
     list-style: none;
@@ -100,6 +105,14 @@ button:focus {
   position: relative;
 }
 
+.App-header .wrapper {
+  background-image: url(./assets/bookshelf.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  border: 5px solid black;
+}
+
 .headerText {
   display: flex;
   flex-direction: row;
@@ -129,13 +142,7 @@ button:focus {
   color: white;
 }
 
-.App-header .wrapper {
-  background-image: url(./assets/bookshelf.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  border: 5px solid black;
-}
+
 
 /* Form */
 
@@ -292,9 +299,7 @@ i {
   }
 
   .headerText a {
-   
-    text-align: center;
-    top: 110%;
+    top: 105%;
     position: absolute;
   }  
 

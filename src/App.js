@@ -51,7 +51,7 @@ class App extends Component {
       })
             
     }).catch((error) => {
-      console.log(error);
+
     })
 
     // Bookshelf firebase log
@@ -109,7 +109,7 @@ class App extends Component {
         key: apiKey,
         q: this.state.userInput,
         startIndex: 0,
-        maxResults: 32,
+        maxResults: 20,
         
       }
     }).then((response) => {
@@ -149,7 +149,7 @@ class App extends Component {
         <header className="App-header">
           <div className="headerText">
             <h1 id='search'>bookshelf</h1>
-            <a href="#bookshelf"><i class="fas fa-book-reader"></i> Go to Bookshelf</a>
+            <a href="#bookshelf"><i className="fas fa-book-reader"></i> Go to Bookshelf</a>
           </div>
           <div className="wrapper">
 
@@ -169,7 +169,6 @@ class App extends Component {
 
         <section className="results wrapper" ref={this.myRef}>
           {this.state.books.map((book) => {
-            console.log(book)
             return (
               <DisplayBooks shelf={this.addToBookshelf} key={book.id} book={book}  />
             )
@@ -179,11 +178,10 @@ class App extends Component {
         <section className="bookshelfSection">
           <div className="bookshelfText wrapper">
             <h2 className="bookshelfHeading" id="bookshelf">my Bookshelf</h2>
-            <a href="#search" class='backToSearchLink'><i class="fas fa-search"></i>Back to Search</a>
+            <a href="#search" className='backToSearchLink'><i className="fas fa-search"></i>Back to Search</a>
           </div>
           <div className="bookshelf wrapper">
             {this.state.updatedBookshelf.map((book) => {
-              console.log(book)
               return (
                 <div key={book.key}>
                   <div className="bookImageContainer">
