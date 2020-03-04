@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1771f907031cf84c622eb12d1a2dbf52",
+    "revision": "5558914e12c29dadafd6ac27646620f3",
     "url": "/kenneth-taylor-project-five/index.html"
   },
   {
-    "revision": "38151cb10cc34e5d3f63",
-    "url": "/kenneth-taylor-project-five/static/css/main.cf6f895d.chunk.css"
+    "revision": "7dfdb1afaf7a67edccad",
+    "url": "/kenneth-taylor-project-five/static/css/main.c3282964.chunk.css"
   },
   {
     "revision": "2022304fc3e9fb58e36d",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kenneth-taylor-project-five/static/js/2.c93cdc51.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "38151cb10cc34e5d3f63",
-    "url": "/kenneth-taylor-project-five/static/js/main.07d46ea3.chunk.js"
+    "revision": "7dfdb1afaf7a67edccad",
+    "url": "/kenneth-taylor-project-five/static/js/main.cbbd4b31.chunk.js"
   },
   {
     "revision": "9ab93bc68fea8125937d",
