@@ -149,7 +149,7 @@ class App extends Component {
         <header className="App-header">
           <div className="headerText">
             <h1 id='search'>bookshelf</h1>
-            <a href="#bookshelf"><i className="fas fa-book-reader"></i> Go to Bookshelf</a>
+            {!!this.state.updatedBookshelf && !!this.state.updatedBookshelf.length && <a href="#bookshelf"><i className="fas fa-book-reader"></i> Go to Bookshelf</a>}
           </div>
           <div className="wrapper">
 
