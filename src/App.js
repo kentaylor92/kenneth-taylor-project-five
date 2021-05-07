@@ -174,32 +174,34 @@ class App extends Component {
             )
           })}
         </section>
-
-        <section className="bookshelfSection">
-          <div className="bookshelfText wrapper">
-            <h2 className="bookshelfHeading" id="bookshelf">my Bookshelf</h2>
-            <a href="#search" className='backToSearchLink'><i className="fas fa-search"></i>Back to Search</a>
-          </div>
-          <div className="bookshelf wrapper">
-            {this.state.updatedBookshelf.map((book) => {
-              return (
-                <div key={book.key}>
-                  <div className="bookImageContainer">
-                    <a href={book.name.linkToBuy} target='_blank' rel="noopener noreferrer">
-                      <img src={
-                        book.name.bookImg === undefined
-                          ? 'http://i.imgur.com/sJ3CT4V.gif'
-                          : book.name.bookImg} alt={book.name.title} />
-                    </a> 
-                  </div>
-                    <h3>{book.name.title}</h3>
-                    <p>{book.name.author[0]}</p>
-                    <button onClick={ () => {this.removeBook(book.key) }}>Remove from shelf</button>  
-                </div>   
-              )
-            })}
-          </div>
-        </section>
+        
+        {!!this.state.updatedBookshelf && !!this.state.updatedBookshelf.length &&
+          <section className="bookshelfSection">
+            <div className="bookshelfText wrapper">
+              <h2 className="bookshelfHeading" id="bookshelf">my Bookshelf</h2>
+              <a href="#search" className='backToSearchLink'><i className="fas fa-search"></i>Back to Search</a>
+            </div>
+            <div className="bookshelf wrapper">
+              {!!this.state.updatedBookshelf && this.state.updatedBookshelf.map((book) => {
+                return (
+                  <div key={book.key}>
+                    <div className="bookImageContainer">
+                      <a href={book.name.linkToBuy} target='_blank' rel="noopener noreferrer">
+                        <img src={
+                          book.name.bookImg === undefined
+                            ? 'http://i.imgur.com/sJ3CT4V.gif'
+                            : book.name.bookImg} alt={book.name.title} />
+                      </a> 
+                    </div>
+                      <h3>{book.name.title}</h3>
+                      <p>{book.name.author && book.name.author[0]}</p>
+                      <button onClick={ () => {this.removeBook(book.key) }}>Remove from shelf</button>  
+                  </div>   
+                )
+              })}
+            </div>
+          </section>
+        }
         <Footer />
       </div>
     );
